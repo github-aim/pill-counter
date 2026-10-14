@@ -118,7 +118,9 @@ On the phone, connect to the hotspot and visit `http://<COMPUTER-IP>:5000`. Keep
 
 ## Security and status
 
-This demo listens on `0.0.0.0:5000` using the Flask development server and ordinary **HTTP**, without login/authentication or HTTPS. Anyone able to access the server's network port can use its interface, and output images can be viewed using their URLs. Run only on a controlled network. Do not make it publicly accessible or use real evidentiary materials without security review and laboratory authorization.
+The app itself listens on `0.0.0.0:5000` using Flask's development server and has no built-in login or HTTPS. Do not expose port 5000 directly to the internet. For a public-domain demonstration, put the app behind a reverse proxy configured for HTTPS and password authentication, and keep real evidence photographs and identifying case information out of the demo unless the organization has approved the system. The app saves annotated JPEGs and appends case/item/analyst values to `results/counts.csv`; use fictitious details and sample images.
+
+PDF reports and email delivery are not implemented in this version. DigitalOcean blocks outbound SMTP on ports 25, 465, and 587; a later email feature should use a third-party email service API, with its credential stored outside GitHub.
 
 The application is the **last reconstructed code package shared for this project**, not a byte-for-byte export from the unavailable original ThinkPad. It is custom Python code built on Flask, NumPy and OpenCV, **not copied from another published pill-counting project**. Earlier demonstration tests reportedly returned correct counts of 26 and 97 separated tablets under selected conditions, but **these do not establish a validated accuracy rate**. Re-test this repository build on the new computer.
 
